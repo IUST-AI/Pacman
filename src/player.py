@@ -1,14 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import pygame
-
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 576
-
-# Define some colors
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
+from config import *
 
 
 class Player(pygame.sprite.Sprite):
@@ -120,14 +111,10 @@ class Player(pygame.sprite.Sprite):
 
 class Animation(object):
     def __init__(self, img, width, height):
-        # Load the sprite sheet
         self.sprite_sheet = img
-        # Create a list to store the images
         self.image_list = []
         self.load_images(width, height)
-        # Create a variable which will hold the current image of the list
         self.index = 0
-        # Create a variable that will hold the time
         self.clock = 1
 
     def load_images(self, width, height):
